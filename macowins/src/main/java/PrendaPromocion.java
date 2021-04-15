@@ -6,6 +6,6 @@ public class PrendaPromocion implements EstadoPrenda{
     }
     @Override
     public int precio(int precioLista) {
-        return precioLista;
+        return precioLista-descuento;
     }
 }
