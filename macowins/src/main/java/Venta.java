@@ -6,5 +6,15 @@ public class Venta {
     java.util.Date fecha = new Date();
     LinkedList<Prenda>prendas = new LinkedList();
 
-    Venta () {}
+    Venta (LinkedList<Prenda>prendas) {
+        this.prendas = prendas;
+    }
+
+    boolean confirmarFecha(java.util.Date fechaRequerida) {
+        return fecha == fechaRequerida;
+    }
+
+    int montoTotal() {
+        return prendas.stream().mapToInt(prenda -> prenda.precioFinal()).sum();
+    }
 }
